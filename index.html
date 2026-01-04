@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,15 +7,14 @@
     <title>User91w | Portfolio</title>
     <meta name="description" content="Portfolio de User91w - Projets Interactifs & Passionné d'Anime.">
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap"
         rel="stylesheet">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="bg-main">
+    <canvas id="particles"></canvas>
     <div class="glow-overlay"></div>
     <div class="stars-container"></div>
 
@@ -23,16 +22,15 @@
         <div class="nav-container">
             <span class="logo">User91w<span class="dot">.</span></span>
             <ul class="nav-links">
-                <li><a href="#home" class="nav-btn glass" data-i18n="nav_home">Accueil</a></li>
-                <li><a href="#interests" class="nav-btn glass" data-i18n="nav_interests">Intérêts</a></li>
-                <li><a href="#skills" class="nav-btn glass" data-i18n="nav_skills">Compétences</a></li>
-                <li><a href="#connect" class="nav-btn glass" data-i18n="nav_connect">Connecter</a></li>
+                <li><a href="#home" class="nav-btn glass" data-i18n="nav_home">Home</a></li>
+                <li><a href="#projects" class="nav-btn glass" data-i18n="nav_projects">Projects</a></li>
+                <li><a href="#skills" class="nav-btn glass" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#connect" class="nav-btn glass" data-i18n="nav_connect">Connect</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="profile-frame">
@@ -40,31 +38,120 @@
                     <div class="aura"></div>
                 </div>
                 <h1 class="glitch" data-text="User91w">User91w</h1>
-                <p class="subtitle" data-i18n="hero_subtitle">Créateur de Projets Interactifs & Explorateur Digital</p>
+                <div class="subtitle" data-i18n="hero_subtitle">Interactive Project Creator & Digital Explorer</div>
+
+                <div class="lanyard-container glass" id="discord-presence">
+                    <div class="lanyard-header">
+                        <div class="avatar-container">
+                            <img id="discord-avatar" src="" alt="Avatar" class="discord-avatar">
+                            <div id="discord-status-dot" class="status-dot-large"></div>
+                        </div>
+                        <div class="user-info">
+                            <div class="username-row">
+                                <span id="discord-name">Loading...</span>
+                                <span id="discord-tag">#0000</span>
+                            </div>
+                            <div id="discord-custom-status" class="custom-status">...</div>
+                        </div>
+                    </div>
+                    <div id="discord-activities" class="activities-list">
+                    </div>
+                </div>
+
                 <div class="tags">
+                    <span>Node.js</span>
+                    <span>React</span>
                     <span>Python</span>
-                    <span>C#</span>
                     <span>JavaScript</span>
-                    <span>Luau</span>
+                    <span>C#</span>
                 </div>
             </div>
         </section>
 
-        <!-- Interests Section -->
-        <section id="interests" class="section">
-            <h2 class="section-title" data-i18n="interests_title">Centres d’intérêt</h2>
+        <section id="major-project" class="section glass searcher-section">
+            <div class="searcher-content">
+                <h2 class="section-title gradient-text" data-i18n="major_project_title">PROJECT IN PROGRESS</h2>
+                <div class="searcher-grid">
+                    <div class="searcher-info glass">
+                        <i data-lucide="database" class="icon-l"></i>
+                        <h3 data-i18n="db_searcher_name">Database Searcher</h3>
+                        <p data-i18n="db_searcher_desc">I am currently developing a massive search engine capable of
+                            indexing and querying data across hundreds of databases simultaneously. A powerhouse tool
+                            for large-scale data analysis.</p>
+                        <div class="searcher-tags">
+                            <span class="tag-gold">Big Data</span>
+                            <span class="tag-gold">Indexing</span>
+                            <span class="tag-gold">Massive Search</span>
+                        </div>
+                    </div>
+                    <div class="trade-info glass">
+                        <i data-lucide="shuffle" class="icon-l"></i>
+                        <h3 data-i18n="trade_title">Marketplace / Trade</h3>
+                        <p data-i18n="trade_desc">If anyone has databases to trade, I am open to proposals. High-level
+                            projects only.</p>
+                        <div class="payment-methods">
+                            <div class="method glass"><i data-lucide="bitcoin"></i> BTC</div>
+                            <div class="method glass"><i data-lucide="credit-card"></i> PayPal</div>
+                        </div>
+                        <p class="crypto-note">Discord: <strong>user91w</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title" data-i18n="projects_title">My Creations</h2>
+            <div class="projects-collage-container glass">
+                <img src="anime_collage_v2.png" alt="Projects Collage" class="collage-bg">
+                <div class="grid-overlay"></div>
+            </div>
             <div class="cards-grid">
                 <div class="card glass">
-                    <div class="card-bg-img" style="background-image: url('aura_energy_abstract_1767413028995.png');">
-                    </div>
-                    <i data-lucide="gamepad-2"></i>
-                    <h3 data-i18n="gaming_title">Gaming & Interactif</h3>
-                    <p data-i18n="gaming_desc">Jeux vidéo et projets interactifs immersifs.</p>
+                    <div class="card-icon"><i data-lucide="bot"></i></div>
+                    <h3>Discord Bot</h3>
+                    <p>Advanced automated systems for community management.</p>
                 </div>
-                <div class="card glass special">
-                    <div class="card-bg-img" style="background-image: url('anime_collage_v2.png');"></div>
-                    <i data-lucide="tv"></i>
-                    <h3 data-i18n="anime_title">Top 5 Anime</h3>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="wrench"></i></div>
+                    <h3>Discord Tools</h3>
+                    <p>Specialized utilities to optimize Discord usage.</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="award"></i></div>
+                    <h3>Custom HypeSquad</h3>
+                    <p>Extensive personalization tools and exclusive badges.</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="map-pin"></i></div>
+                    <h3>Advanced IP Logger</h3>
+                    <p>Secure tracking and logging system (Educational).</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="video"></i></div>
+                    <h3>Omagle Clone</h3>
+                    <p>Anonymous video chat platform with dynamic filters.</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="shield-off"></i></div>
+                    <h3>Educational Stealer</h3>
+                    <p>Security analysis and vulnerability demonstration.</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="at-sign"></i></div>
+                    <h3>Username Gen</h3>
+                    <p>Rare and optimized username generator.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests" class="section">
+            <h2 class="section-title" data-i18n="interests_title">Areas of Interest</h2>
+            <div class="cards-grid">
+                <div class="card glass tilt-card special-anime">
+                    <div class="anime-header">
+                        <i data-lucide="tv"></i>
+                        <h3 data-i18n="anime_title">Top 5 Anime</h3>
+                    </div>
                     <ul class="anime-list">
                         <li><span class="rank">#1</span> Dragon Ball Z</li>
                         <li><span class="rank">#2</span> Bunny Girl Senpai</li>
@@ -74,39 +161,40 @@
                     </ul>
                 </div>
                 <div class="card glass">
-                    <i data-lucide="message-square"></i>
-                    <h3 data-i18n="discord_title">Communauté Discord</h3>
-                    <p data-i18n="discord_desc">Exploration et participation active aux communautés.</p>
+                    <i data-lucide="gamepad-2"></i>
+                    <h3 data-i18n="gaming_title">Gaming & Interactive</h3>
+                    <p data-i18n="gaming_desc">Immersive video games and interactive digital projects.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="section">
-            <h2 class="section-title" data-i18n="skills_title">Compétences Techniques</h2>
+            <h2 class="section-title" data-i18n="skills_title">Technical Skills</h2>
             <div class="skills-container">
                 <div class="skill-category glass">
-                    <h3 data-i18n="languages_title">Langages</h3>
+                    <h3 data-i18n="languages_title">Languages & Frameworks</h3>
                     <div class="skill-tags">
+                        <span class="skill-tag highlight">Node.js</span>
+                        <span class="skill-tag highlight">React</span>
                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">C#</span>
                         <span class="skill-tag">HTML / CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Luau (Roblox)</span>
+                        <span class="skill-tag">Luau</span>
                     </div>
                 </div>
                 <div class="text-info glass">
-                    <p data-i18n="skills_expert"><strong>Expertise :</strong> Très expérimenté dans le développement de
-                        scripts, interfaces et systèmes interactifs avancés.</p>
+                    <p data-i18n="skills_expert"><strong>Expertise:</strong> Specialized in modern fullstack development
+                        and complex automation tools.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Connect Section -->
         <section id="connect" class="section">
-            <h2 class="section-title" data-i18n="connect_title">Me Contacter</h2>
+            <h2 class="section-title" data-i18n="connect_title">Contact Me</h2>
             <div class="social-grid">
-                <a href="https://discord.com/users/user91w" target="_blank" class="social-btn glass discord">
+                <a href="https://discord.com/users/1448766908445753354" target="_blank"
+                    class="social-btn glass discord">
                     <i data-lucide="message-circle"></i>
                     <span>Discord: user91w</span>
                 </a>
@@ -135,7 +223,7 @@
     </main>
 
     <footer class="glass">
-        <p data-i18n="footer_copy">&copy; 2026 User91w. Fait avec passion. Accès Autorisé.</p>
+        <p data-i18n="footer_copy">&copy; 2026 User91w. Built with passion. Authorized Access.</p>
     </footer>
 
     <script src="script.js"></script>
