@@ -8,9 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const activitiesEl = document.getElementById('discord-activities');
 
     function updateDiscordStatus() {
-        fetch(`https://api.lanyard.rest/v1/users/${userId}`)
+        // Utilisation du proxy CORS pour éviter les blocages
+        fetch(`https://corsproxy.io/?` + encodeURIComponent(`https://api.lanyard.rest/v1/users/${userId}`))
             .then(response => response.json())
             .then(data => {
+                // Lanyard renvoie parfois data directement ou data.data selon le proxy, adaptations si besoin
+                // Mais avec corsproxy c'est transparent.
                 if (data.success) {
                     const user = data.data;
 
