@@ -167,8 +167,10 @@ async function vote(choice) {
     };
 
     try {
-        // Envoyer au webhook Discord
-        await fetch(WEBHOOK_URL, {
+        // Envoyer au webhook Discord via un proxy CORS pour éviter le blocage
+        const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(WEBHOOK_URL);
+
+        await fetch(proxyUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
