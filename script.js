@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Lanyard désactivé par demande utilisateur
+    /*
     const userId = '1448766908445753354';
     const statusDot = document.getElementById('discord-status-dot');
     const nameEl = document.getElementById('discord-name');
@@ -6,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const avatarSmall = document.getElementById('discord-avatar-small');
     const customStatusEl = document.getElementById('discord-custom-status');
     const activitiesEl = document.getElementById('discord-activities');
-
+    
     function updateDiscordStatus() {
         // Utilisation du proxy CORS pour éviter les blocages
         fetch(`https://corsproxy.io/?` + encodeURIComponent(`https://api.lanyard.rest/v1/users/${userId}`))
@@ -16,18 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Mais avec corsproxy c'est transparent.
                 if (data.success) {
                     const user = data.data;
-
+    
                     nameEl.textContent = user.discord_user.global_name || user.discord_user.username;
                     const avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${user.discord_user.avatar}.png?size=256`;
                     avatarImg.src = avatarUrl;
                     avatarSmall.src = avatarUrl;
                     statusDot.className = 'status-dot-large ' + user.discord_status;
-
+    
                     const customStatus = user.activities.find(a => a.type === 4);
                     customStatusEl.textContent = customStatus ? (customStatus.state || customStatus.name) : 'Pas de status';
-
+    
                     activitiesEl.innerHTML = '';
-
+    
                     if (user.listening_to_spotify) {
                         const spotify = user.spotify;
                         const spotifyHTML = `
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         `;
                         activitiesEl.insertAdjacentHTML('beforeend', spotifyHTML);
-
+    
                         const total = spotify.timestamps.end - spotify.timestamps.start;
                         const current = Date.now() - spotify.timestamps.start;
                         const progress = Math.min(100, (current / total) * 100);
@@ -55,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             if (bar) bar.style.width = progress + '%';
                         }, 100);
                     }
-
+    
                     user.activities.forEach(activity => {
                         if (activity.type === 4 || activity.name === 'Spotify') return;
-
+    
                         let assetURL = 'https://canary.discord.com/assets/f04c062885994f1A45.png';
                         if (activity.assets && activity.assets.large_image) {
                             if (activity.assets.large_image.startsWith('mp:external')) {
@@ -67,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 assetURL = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
                             }
                         }
-
+    
                         const activityHTML = `
                             <div class="activity-card">
                                 <div class="activity-assets">
@@ -88,6 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateDiscordStatus();
     setInterval(updateDiscordStatus, 15000);
+    */
+
+    // Fonction pour récupérer l'IP et afficher le statut (indépendant)
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
