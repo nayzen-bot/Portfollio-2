@@ -12,6 +12,77 @@
     --font-body: 'Inter', sans-serif;
 }
 
+/* Bannière TZ Project */
+.tz-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff9d00, #ff0000);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+    padding: 12px 20px;
+    z-index: 10000;
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+.tz-banner-content {
+    font-family: var(--font-header);
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+    animation: pulse-text 2s ease-in-out infinite;
+}
+
+.tz-fire {
+    font-size: 1.3rem;
+    animation: bounce 1s infinite;
+    margin: 0 10px;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse-text {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,25 +92,19 @@
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: #000000;
     color: #fff;
     font-family: var(--font-body);
     overflow-x: hidden;
     line-height: 1.6;
 }
 
-#particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-}
-
 .bg-main {
-    background: radial-gradient(circle at 50% 50%, #0d0d1a 0%, #050507 100%);
+    background: #000000;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(255, 100, 0, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 140, 0, 0.04) 0%, transparent 50%);
     min-height: 100vh;
 }
 
@@ -62,7 +127,7 @@ body {
 
 .navbar {
     position: fixed;
-    top: 20px;
+    top: 65px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -163,14 +228,58 @@ body {
     font-family: var(--font-header);
     font-size: 5rem;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     line-height: 1;
+    background: linear-gradient(90deg, var(--primary), #fff, var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.subtitle {
-    font-size: 1.2rem;
-    color: #aaa;
-    margin-bottom: 30px;
+.intro-text {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin: 20px auto;
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+.intro-text strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.intro-text .highlight {
+    color: var(--gold);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.discord-join-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 35px;
+    margin: 20px auto 30px;
+    background: linear-gradient(135deg, #5865F2, #7289da);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 2px solid #5865F2;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(88, 101, 242, 0.4);
+}
+
+.discord-join-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(88, 101, 242, 0.6);
+    background: linear-gradient(135deg, #7289da, #5865F2);
+}
+
+.discord-join-btn i {
+    font-size: 1.5rem;
 }
 
 .lanyard-container {
@@ -222,12 +331,6 @@ body {
     font-weight: 800;
     font-size: 1.1rem;
     color: #fff;
-}
-
-#discord-tag {
-    color: #888;
-    font-size: 0.9rem;
-    margin-left: 5px;
 }
 
 .custom-status {
@@ -563,6 +666,78 @@ body {
     background: rgba(29, 185, 84, 0.1);
 }
 
+/* Sondage Section */
+.poll-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.poll-description {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin: 20px 0 40px;
+    line-height: 1.6;
+}
+
+.poll-description strong {
+    color: var(--gold);
+}
+
+.poll-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.poll-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 35px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--glass-border);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.poll-btn:hover {
+    transform: translateY(-3px);
+    background: var(--glass-heavy);
+    border-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(255, 157, 0, 0.3);
+}
+
+.poll-btn i {
+    width: 20px;
+    height: 20px;
+}
+
+.poll-results {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Icônes Font Awesome dans les skills */
+.skill-tags .fab {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Amélioration des icônes sociales */
+.social-btn i {
+    font-size: 1.5rem;
+}
+
 footer {
     margin-top: 80px;
     padding: 40px;
@@ -571,17 +746,6 @@ footer {
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
-}
-
-.glow-overlay {
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 157, 0, 0.08) 0%, transparent 70%);
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: -1;
-    transform: translate(-50%, -50%);
 }
 
 .glitch {
@@ -654,4 +818,207 @@ footer {
     .section-title {
         font-size: 2.2rem;
     }
+}/* Skills Section - Nouveau Design Moderne */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.skill-card {
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid var(--glass-border);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 157, 0, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.skill-card:hover::before {
+    left: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(255, 157, 0, 0.3);
+    background: rgba(255, 157, 0, 0.05);
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, rgba(255, 157, 0, 0.2), rgba(255, 69, 0, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(-primary);
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.skill-icon::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: rotateY(360deg);
+    box-shadow: 0 0 30px rgba(255, 157, 0, 0.5);
+}
+
+.skill-card:hover .skill-icon::after {
+    opacity: 1;
+    animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+.skill-card h3 {
+    font-family: var(--font-header);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover h3 {
+    color: var(--primary);
+}
+
+.skill-level {
+    margin-top: 15px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--gold));
+    border-radius: 10px;
+    position: relative;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(255, 157, 0, 0.5);
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skill-percent {
+    font-size: 0.9rem;
+    color: var(--gold);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.expertise-banner {
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 157, 0, 0.05), rgba(255, 69, 0, 0.02));
+    border: 2px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.expertise-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 157, 0, 0.1) 0%, transparent 70%);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.expertise-banner i {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.expertise-banner p {
+    font-size: 1.1rem;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+.expertise-banner strong {
+    color: var(--gold);
+    font-size: 1.2rem;
 }

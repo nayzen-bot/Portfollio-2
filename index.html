@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User91w | Portfolio</title>
-    <meta name="description" content="Portfolio de User91w - Projets Interactifs & Passionné d'Anime.">
+    <title>sayrojin_ | Portfolio</title>
+    <meta name="description" content="Portfolio de sayrojin_ - Développeur & Vendeur Discord">
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="bg-main">
-    <canvas id="particles"></canvas>
-    <div class="glow-overlay"></div>
-    <div class="stars-container"></div>
+    <!-- Bannière TZ Project -->
+    <div class="tz-banner">
+        <div class="tz-banner-content">
+            <span class="tz-fire">🔥</span>
+            JE VENDS UN TZ PROJECT MENU LIFETIME À 20€ - VENEZ SUR LE DISCORD SI INTÉRESSÉ
+            <span class="tz-fire">🔥</span>
+        </div>
+    </div>
+
 
     <nav class="navbar glass">
         <div class="nav-container">
-            <span class="logo">User91w<span class="dot">.</span></span>
+            <span class="logo">sayrojin_<span class="dot">.</span></span>
             <ul class="nav-links">
-                <li><a href="#home" class="nav-btn glass" data-i18n="nav_home">Home</a></li>
-                <li><a href="#projects" class="nav-btn glass" data-i18n="nav_projects">Projects</a></li>
-                <li><a href="#skills" class="nav-btn glass" data-i18n="nav_skills">Skills</a></li>
-                <li><a href="#connect" class="nav-btn glass" data-i18n="nav_connect">Connect</a></li>
+                <li><a href="#home" class="nav-btn glass">Accueil</a></li>
+                <li><a href="#projects" class="nav-btn glass">Projets</a></li>
+                <li><a href="#skills" class="nav-btn glass">Compétences</a></li>
+                <li><a href="#connect" class="nav-btn glass">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -34,22 +41,30 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="profile-frame">
-                    <img src="goku.jpg" alt="User91w Profile" class="profile-pic">
+                    <img id="discord-avatar" src="" alt="sayrojin_ Profile" class="profile-pic">
                     <div class="aura"></div>
                 </div>
-                <h1 class="glitch" data-text="User91w">User91w</h1>
-                <div class="subtitle" data-i18n="hero_subtitle">Interactive Project Creator & Digital Explorer</div>
+                <h1>sayrojin_</h1>
+                <p class="intro-text">
+                    Yo c'est <strong>sayrojin_</strong> ou alors <strong>user91</strong>, je suis un jeune développeur
+                    qui fais des choses par ci par là et je me concentre sur mon nouveau serveur Discord où je vends
+                    des <span class="highlight">DataBases</span>, <span class="highlight">Nitro</span>, si tu veux plus
+                    d'info je t'invite à
+                </p>
+                <a href="https://discord.gg/rgz7cUpXKG" target="_blank" class="discord-join-btn glass">
+                    <i class="fab fa-discord"></i>
+                    Rejoindre le serveur
+                </a>
 
                 <div class="lanyard-container glass" id="discord-presence">
                     <div class="lanyard-header">
                         <div class="avatar-container">
-                            <img id="discord-avatar" src="" alt="Avatar" class="discord-avatar">
+                            <img id="discord-avatar-small" src="" alt="Avatar" class="discord-avatar">
                             <div id="discord-status-dot" class="status-dot-large"></div>
                         </div>
                         <div class="user-info">
                             <div class="username-row">
                                 <span id="discord-name">Loading...</span>
-                                <span id="discord-tag">#0000</span>
                             </div>
                             <div id="discord-custom-status" class="custom-status">...</div>
                         </div>
@@ -57,165 +72,215 @@
                     <div id="discord-activities" class="activities-list">
                     </div>
                 </div>
-
-                <div class="tags">
-                    <span>Node.js</span>
-                    <span>React</span>
-                    <span>Python</span>
-                    <span>JavaScript</span>
-                    <span>C#</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="major-project" class="section glass searcher-section">
-            <div class="searcher-content">
-                <h2 class="section-title gradient-text" data-i18n="major_project_title">PROJECT IN PROGRESS</h2>
-                <div class="searcher-grid">
-                    <div class="searcher-info glass">
-                        <i data-lucide="database" class="icon-l"></i>
-                        <h3 data-i18n="db_searcher_name">Database Searcher</h3>
-                        <p data-i18n="db_searcher_desc">I am currently developing a massive search engine capable of
-                            indexing and querying data across hundreds of databases simultaneously. A powerhouse tool
-                            for large-scale data analysis.</p>
-                        <div class="searcher-tags">
-                            <span class="tag-gold">Big Data</span>
-                            <span class="tag-gold">Indexing</span>
-                            <span class="tag-gold">Massive Search</span>
-                        </div>
-                    </div>
-                    <div class="trade-info glass">
-                        <i data-lucide="shuffle" class="icon-l"></i>
-                        <h3 data-i18n="trade_title">Marketplace / Trade</h3>
-                        <p data-i18n="trade_desc">If anyone has databases to trade, I am open to proposals. High-level
-                            projects only.</p>
-                        <div class="payment-methods">
-                            <div class="method glass"><i data-lucide="bitcoin"></i> BTC</div>
-                            <div class="method glass"><i data-lucide="credit-card"></i> PayPal</div>
-                        </div>
-                        <p class="crypto-note">Discord: <strong>user91w</strong></p>
-                    </div>
-                </div>
             </div>
         </section>
 
         <section id="projects" class="section">
-            <h2 class="section-title" data-i18n="projects_title">My Creations</h2>
-            <div class="projects-collage-container glass">
-                <img src="anime_collage_v2.png" alt="Projects Collage" class="collage-bg">
-                <div class="grid-overlay"></div>
-            </div>
+            <h2 class="section-title">Mes Projets</h2>
             <div class="cards-grid">
                 <div class="card glass">
                     <div class="card-icon"><i data-lucide="bot"></i></div>
                     <h3>Discord Bot</h3>
-                    <p>Advanced automated systems for community management.</p>
+                    <p>Systèmes automatisés avancés pour la gestion de communauté.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i data-lucide="wrench"></i></div>
                     <h3>Discord Tools</h3>
-                    <p>Specialized utilities to optimize Discord usage.</p>
+                    <p>Utilitaires spécialisés pour optimiser l'utilisation de Discord.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i data-lucide="award"></i></div>
                     <h3>Custom HypeSquad</h3>
-                    <p>Extensive personalization tools and exclusive badges.</p>
-                </div>
-                <div class="card glass">
-                    <div class="card-icon"><i data-lucide="map-pin"></i></div>
-                    <h3>Advanced IP Logger</h3>
-                    <p>Secure tracking and logging system (Educational).</p>
+                    <p>Outils de personnalisation et badges exclusifs.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i data-lucide="video"></i></div>
-                    <h3>Omagle Clone</h3>
-                    <p>Anonymous video chat platform with dynamic filters.</p>
-                </div>
-                <div class="card glass">
-                    <div class="card-icon"><i data-lucide="shield-off"></i></div>
-                    <h3>Educational Stealer</h3>
-                    <p>Security analysis and vulnerability demonstration.</p>
+                    <h3>Omegle Clone</h3>
+                    <p>Plateforme de chat vidéo anonyme avec filtres dynamiques.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i data-lucide="at-sign"></i></div>
                     <h3>Username Gen</h3>
-                    <p>Rare and optimized username generator.</p>
+                    <p>Générateur de usernames rares et optimisés.</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="shopping-bag"></i></div>
+                    <h3>Shop IDF E-commerce</h3>
+                    <p>Site web complet pour un shop en Île-de-France avec gestion des commandes.</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon"><i data-lucide="database"></i></div>
+                    <h3>Database Trade</h3>
+                    <p>Échange et marketplace de bases de données de qualité.</p>
                 </div>
             </div>
         </section>
 
-        <section id="interests" class="section">
-            <h2 class="section-title" data-i18n="interests_title">Areas of Interest</h2>
-            <div class="cards-grid">
-                <div class="card glass tilt-card special-anime">
-                    <div class="anime-header">
-                        <i data-lucide="tv"></i>
-                        <h3 data-i18n="anime_title">Top 5 Anime</h3>
-                    </div>
-                    <ul class="anime-list">
-                        <li><span class="rank">#1</span> Dragon Ball Z</li>
-                        <li><span class="rank">#2</span> Bunny Girl Senpai</li>
-                        <li><span class="rank">#3</span> Attack on Titan (SNK)</li>
-                        <li><span class="rank">#4</span> Mushoku Tensei</li>
-                        <li><span class="rank">#5</span> One Piece</li>
-                    </ul>
+        <section id="poll" class="section">
+            <div class="poll-container glass">
+                <h2 class="section-title">Sondage 1:1</h2>
+                <p class="poll-description">
+                    Je vends du <strong>1:1</strong> de qualité ! Dis-moi si t'es chaud pour que je lance ça
+                    officiellement 🔥
+                </p>
+                <div class="poll-options">
+                    <button class="poll-btn glass" onclick="vote('yes')">
+                        <i data-lucide="thumbs-up"></i>
+                        Ouais je suis chaud ! 🔥
+                    </button>
+                    <button class="poll-btn glass" onclick="vote('no')">
+                        <i data-lucide="thumbs-down"></i>
+                        Pas intéressé
+                    </button>
                 </div>
-                <div class="card glass">
-                    <i data-lucide="gamepad-2"></i>
-                    <h3 data-i18n="gaming_title">Gaming & Interactive</h3>
-                    <p data-i18n="gaming_desc">Immersive video games and interactive digital projects.</p>
-                </div>
+                <div id="poll-results" class="poll-results"></div>
             </div>
         </section>
 
         <section id="skills" class="section">
-            <h2 class="section-title" data-i18n="skills_title">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category glass">
-                    <h3 data-i18n="languages_title">Languages & Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag highlight">Node.js</span>
-                        <span class="skill-tag highlight">React</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">HTML / CSS</span>
-                        <span class="skill-tag">Luau</span>
+            <h2 class="section-title">Compétences Techniques</h2>
+
+            <div class="skills-grid">
+                <!-- Node.js -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                        <span class="skill-percent">90%</span>
                     </div>
                 </div>
-                <div class="text-info glass">
-                    <p data-i18n="skills_expert"><strong>Expertise:</strong> Specialized in modern fullstack development
-                        and complex automation tools.</p>
+
+                <!-- React -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                </div>
+
+                <!-- C# -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>C#</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                </div>
+
+                <!-- HTML/CSS -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML/CSS</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                </div>
+
+                <!-- Lua -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>Lua</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                        <span class="skill-percent">70%</span>
+                    </div>
+                </div>
+
+                <!-- C++ -->
+                <div class="skill-card glass">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>C++</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 65%"></div>
+                        </div>
+                        <span class="skill-percent">65%</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="connect" class="section">
-            <h2 class="section-title" data-i18n="connect_title">Contact Me</h2>
+            <h2 class="section-title">Me Contacter</h2>
             <div class="social-grid">
                 <a href="https://discord.com/users/1448766908445753354" target="_blank"
                     class="social-btn glass discord">
-                    <i data-lucide="message-circle"></i>
-                    <span>Discord: user91w</span>
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
                 </a>
                 <a href="https://www.snapchat.com/add/nb_9unnnn" target="_blank" class="social-btn glass snapchat">
-                    <i data-lucide="ghost"></i>
+                    <i class="fab fa-snapchat"></i>
                     <span>Snapchat</span>
                 </a>
                 <a href="https://www.tiktok.com/@intr_ouvable2.o" target="_blank" class="social-btn glass tiktok">
-                    <i data-lucide="music-2"></i>
+                    <i class="fab fa-tiktok"></i>
                     <span>TikTok</span>
                 </a>
                 <a href="https://github.com/nayzen-bot" target="_blank" class="social-btn glass github">
-                    <i data-lucide="github"></i>
+                    <i class="fab fa-github"></i>
                     <span>GitHub</span>
                 </a>
                 <a href="https://www.twitch.tv/user91w" target="_blank" class="social-btn glass twitch">
-                    <i data-lucide="twitch"></i>
+                    <i class="fab fa-twitch"></i>
                     <span>Twitch</span>
                 </a>
                 <a href="https://open.spotify.com/user/31dtgoy3gpwxef" target="_blank" class="social-btn glass spotify">
-                    <i data-lucide="headphones"></i>
+                    <i class="fab fa-spotify"></i>
                     <span>Spotify</span>
                 </a>
             </div>
@@ -223,7 +288,7 @@
     </main>
 
     <footer class="glass">
-        <p data-i18n="footer_copy">&copy; 2026 User91w. Built with passion. Authorized Access.</p>
+        <p>&copy; 2026 sayrojin_. Fait avec passion 🔥</p>
     </footer>
 
     <script src="script.js"></script>
