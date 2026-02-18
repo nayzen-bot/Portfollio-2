@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Fonction pour le sondage avec webhook Discord
-const WEBHOOK_URL = 'https://discord.com/api/webhooks/1469018106931183691/6GAfbsq6PU9VAPmf51tLwMG0bTaXiG89NhowfZgT0iYamgH_TqaIfsIwmOIXs50SYurJ';
+const WEBHOOK_URL = 'https://discord.com/api/webhooks/1473786014911697019/LBfldv8Z2oByQ9HG4KHlQYpBjZz99c8GOgjxdhimUg45qi_JUw06KeWSBtbPrNr2kkNl';
 let userIP = null;
 let hasVoted = false;
 
